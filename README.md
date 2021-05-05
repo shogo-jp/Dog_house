@@ -43,7 +43,8 @@ Things you may want to cover:
 ・デート
 ・公園
 ## 設計書
-<...>
+ ER図   https://app.diagrams.net/#Hshogo-jp%2FDog_house%2Fmain%2FUntitled%20Diagram.drawio
+ テーブル定義書   https://www.icloud.com/numbers/0oxXOMNFuE77vME9vLn2zVvwg#database_design2
 
 ## チャレンジ要素一覧
 https://docs.google.com/spreadsheets/d/1j9O3td_HAjbI-pzeuc88Y0nUkMboZ0MWGRx-R3kt58c/edit#gid=0
