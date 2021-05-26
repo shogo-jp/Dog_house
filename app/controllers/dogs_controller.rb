@@ -51,7 +51,7 @@ class DogsController < ApplicationController
   private
   def dog_params
     # title,body,imageを許可して保存
-    params.require(:dog).permit(:title, :body, :image)
+    params.require(:dog).permit(:title, :body, :image, :dogname)
   end
 end
 

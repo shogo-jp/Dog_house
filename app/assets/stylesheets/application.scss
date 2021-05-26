@@ -28,40 +28,54 @@
   border-radius: 50%;
 }
 
+.main-visual {
+	width: 100%;
+	height: 1100px;
+}
+
 .main-image {
-	height: 1200px;
-	background-image: url(mlo.png);
+	background-image: image-url("mlo.png");
 	background-repeat: no-repeat;
-	background-size: contain;
+	background-size: cover;
+	height: 1000px;
 }
 
-.body {
-  margin: 0;
-  width: 100vw;
-  height: 100vh;
-  background-image:
-    linear-gradient(140deg,
-      #00f3ffA0,
-      #0028b960 40%,
-      #00f3ff60 60%,
-      #00f3ffA0),
-      
-
-      url("https://magazine-cf.techacademy.jp/wp-content/uploads/2021/02/14012940/typing_on_laptop_712.jpg");
-  background-repeat: no-repeat;
-  background-position: 50%;
-  animation: move 20s infinite both;
-}
-
-@keyframes move{
-  0% {
-    background-size:100% auto;
+@media screen and (max-width: 375px) {
+  .main-visual {
+	  height: 160px;
   }
-  50% {
-    background-size:140% auto;
-  }
-  100% {
-    background-size:100% auto;
+  .main-image {
+	  height: 160px;
   }
 }
+
+// .body {
+//   margin: 0;
+//   width: 100vw;
+//   height: 100vh;
+//   background-image:
+//     linear-gradient(140deg,
+//       #00f3ffA0,
+//       #0028b960 40%,
+//       #00f3ff60 60%,
+//       #00f3ffA0),
+
+
+//       url("https://magazine-cf.techacademy.jp/wp-content/uploads/2021/02/14012940/typing_on_laptop_712.jpg");
+//   background-repeat: no-repeat;
+//   background-position: 50%;
+//   animation: move 20s infinite both;
+// }
+
+// @keyframes move{
+//   0% {
+//     background-size:100% auto;
+//   }
+//   50% {
+//     background-size:140% auto;
+//   }
+//   100% {
+//     background-size:100% auto;
+//   }
+// }
 
