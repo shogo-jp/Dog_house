@@ -1,4 +1,6 @@
 class DogsController < ApplicationController
+  before_action :authenticate_user!, except: [:index]                   # deviseのヘルパーを活用して
+                                                                        # ログインしていない人はこの全てのアクションにアクセスできないようにする。ただしindexは見れるようにする
   def index
     @dogs = Dog.all
   end
@@ -16,18 +18,34 @@ class DogsController < ApplicationController
   def create
     @dog = Dog.new(dog_params)
     @dog.user_id = current_user.id
-    @dog .save
-    redirect_to dog_path(@dog)
+    if @dog.save
+      redirect_to dog_path(@dog), notice: '投稿しました'
+    else
+      render :new       # バリデーション
+    end
+
   end
 
   def edit
     @dog = Dog.find(params[:id])
+    if @dog.user != current_user       # dogに結びついているuserとcurrent_userが等しくなかったら
+       redirect_to dog_path, alert: 'ログインして下さい'
+    end
   end
 
   def update
     @dog = Dog.find(params[:id])
-    @dog.update(dog_params)
-    redirect_to dog_path(@dog)
+    if @dog.update(dog_params)
+      redirect_to dog_path(@dog), notice: '更新しました'
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    dog = Dog.find(params[:id])
+    dog.destroy
+    redirect_to dogs_path
   end
 
   private
@@ -36,3 +54,5 @@ class DogsController < ApplicationController
     params.require(:dog).permit(:title, :body, :image)
   end
 end
+
+
