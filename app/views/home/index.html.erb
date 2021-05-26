@@ -1,3 +1,12 @@
+
+<section class="section">
+  <div class="columns is-centered">
+    <div class="main-visual">
+        <div class="main-image"></div>
+    </div>
+  </div>
+</div>
+
 <section class="section">
   <article class="media">
     <div class="media-content">
@@ -6,24 +15,104 @@
           <strong class="is-size-1" style="font-family: cursive;">Doghouse</strong>
         </p>
       </div>
+
+
       <div class="columns is-centered">
         <div class="column is-5">
           <br>
-          <%= link_to "ログイン", new_user_session_path, class: "button is-primary is-fullwidth" %>
+          <%= link_to "ログイン", new_user_session_path, class: "button is-dark is-fullwidth" %>
           <br>
-          <%= link_to "新規登録", new_user_registration_path, class: "button is-primary is-fullwidth" %>
+          <br>
+          <%= link_to "新規登録", new_user_registration_path, class: "button is-dark is-fullwidth" %>
         </div>
       </div>
+      <br>
+      <br>
+
+
+　　　<div class="container">
+        <div class="content has-text-centered notification is-light">
+          <br>
+            <strong>Doghouse へようこそ！</strong>
+          </br>
+          <br>
+            Doghouse では犬を飼い始めた初心者と、飼育経験が豊富な上級者を結び付けるサービスです。 愛犬との２ショットも公開できます。
+          </br>
+      </div>
+
+      </br>
+      <br>
+
+      <div class="container is-max-desktop">
+        <div class="content has-text-centered notification is-info">
+        <code>ポイント1</code> <br>犬種名にご自身が飼育されている、犬種名を入れよう！見られる可能性UP！ </br>
+        </div>
+      </div>
+
+      <br>
+      </br>
+      </br>
+      <br>
+
+      <div class="container is-max-desktop">
+        <div class="content has-text-centered notification is-info">
+        <code>ポイント2</code> <br>キャプションにご自身が飼育されている、犬種の飼育ポインやコツなどをシェアし公開しよう！</br>
+        </div>
+      </div>
+
+      <br>
+      </br>
+      </br>
+      <br>
+
+      <div class="container is-max-desktop">
+        <div class="content has-text-centered notification is-info">
+        <code>ポイント2</code> <br>愛犬との２ショットを公開して交流しよう！</br>
+        </div>
+      </div>
+
+       <br>
+      </br>
+       <br>
+      </br>
+       <br>
+      </br>
+
+
+
     </div>
   </article>
-  <br>
-<!--  <div class="columns is-centered">-->
-<!--    <div class="column">-->
-<!--      <figure>-->
-<!--        <div class="main-image"></div>-->
-<!--      </figure>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</section>-->
+</section>
 
- <div class="body"></div>
+
+<section class="section">
+  <div class="container">
+      <div class="columns is-mobile">
+        <div class="column is-4">
+          <figure class="image is-square">
+            <img class="is-rounded" src="<%= asset_path('image1.png') %>">
+          </figure>
+        </div>
+
+        <div class="column is-4">
+          <figure class="image is-square">
+            <img class="is-rounded" src="<%= asset_path('image2.png') %>">
+          </figure>
+        </div>
+
+        <div class="column is-4">
+          <figure class="image is-square">
+            <img class="is-rounded"  src="<%= asset_path('image3.png') %>">
+          </figure>
+        </div>
+      </div>
+  </div>
+</section>
+
+<footer class="footer">
+   <div class="container">
+     <div class="content has-text-centered">
+       2021 ©DOGHOUSE
+     </div>
+   </div>
+</footer>
