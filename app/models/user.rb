@@ -6,4 +6,6 @@ class User < ApplicationRecord
   attachment :profile_image
   # dogをたくさん持っている(dogsと複数形にする), ユーザーが消去されたらそれに紐ずくdogも削除される
   has_many :dogs, dependent: :destroy
+
+  validates :username, presence: true
 end

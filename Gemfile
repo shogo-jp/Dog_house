@@ -68,3 +68,11 @@ gem "bulma-rails"
 
 gem 'bourbon'
 gem 'neat'
+
+gem 'bootstrap', '~> 4.4.1'
+gem 'jquery-rails'
+
+gem 'bootstrap-sass'
+
+gem 'autoprefixer-rails'
+gem 'kaminari'
