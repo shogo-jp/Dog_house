@@ -76,3 +76,9 @@ gem 'bootstrap-sass'
 
 gem 'autoprefixer-rails'
 gem 'kaminari'
+
+
+gem 'dotenv-rails'
+group :production do
+  gem 'mysql2'
+end
