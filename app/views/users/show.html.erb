@@ -25,6 +25,26 @@
                 <td class="is-size-4">
                   <strong><%= @user.username %></strong>
                 </td>
+
+                <% if user_signed_in? && current_user != @user %>
+                  <% if current_user.active_relationships.exists?(target_user_id: @user.id) %>
+                  <td class="is-size-4">
+                    <strong><%= link_to 'unfollow', [@user, :follow], remote:true, class: "button is-info is-rounded", method: :delete %></strong>
+                  </td>
+                  <% else %>
+                  <td class="is-size-4">
+                    <strong><%= link_to 'follow', [@user, :follow], remote:true, class: "button is-info is-rounded", method: :post %></strong>
+                  </td>
+                  <% end %>
+                <% end %>
+
+                <td class="is-size-4">
+                  <strong><%= link_to 'followings', [@user, :followings], class: "button is-warning is-light" %></strong>
+                </td>
+
+                <td class="is-size-4">
+                  <strong><%= link_to 'followers', [@user, :followers], class: "button is-warning is-light" %></strong>
+                </td>
                 <!--もし表示しているユーザーのidと一致して良いたらemailを表示する-->
                 <% if @user.id == current_user.id %>
                 <td class="is-size-4">
