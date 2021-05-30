@@ -29,6 +29,21 @@
             <div class="content">
               <table class="table is-narrow">
                 <tr>
+                  <td>
+                    <% if current_user.already_favorited?(@dog) %>
+                      <%= link_to dog_favorites_path(@dog), remote:true, method: :delete do %>
+                          <i class="fas fa-heart"></i>
+                      <% end %>
+                      <%= @dog.favorites.count %>
+                    <% else %>
+                      <%= link_to dog_favorites_path(@dog), remote:true, method: :post do %>
+                          <i class="far fa-heart"></i>
+                      <% end %>
+                      <%= @dog.favorites.count %>
+                    <% end %>
+                  </td>
+                </tr>
+                <tr>
                   <th>キャプション</th>
                 </tr>
                 <tr>  <!--simple_formatで改行などが反映できる-->

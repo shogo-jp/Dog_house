@@ -1,0 +1,45 @@
+<section class="hero is-dark">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        Followings
+      </h1>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-multiline">
+      <% @followings.each do |user| %>
+        <div class="column is-3">
+          <div class="card">
+            <div class="card-content">
+              <div class="card-image">
+                <figure class="image">
+                  <%= link_to user_path(user) do %>
+                    <%= attachment_image_tag user, :profile_image, fallback: "no-image.png" %>
+                  <% end %>
+                </figure>
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="media">
+                <div class="media-content">
+                  <div class="title"><%=link_to user.username, user_path(user) %></div>
+                </div>
+              </div>
+              <div class="content">
+                投稿数：<%= user.dogs.count %> 　　<!--userに紐付いているdog写真が表示される-->
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>
+
+
+

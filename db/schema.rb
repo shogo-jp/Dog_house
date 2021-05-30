@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_26_103109) do
+ActiveRecord::Schema.define(version: 2021_05_29_145540) do
 
   create_table "dogs", force: :cascade do |t|
     t.integer "user_id"
@@ -20,6 +20,22 @@ ActiveRecord::Schema.define(version: 2021_05_26_103109) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "dogname"
+  end
+
+  create_table "favorites", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "dog_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "follows", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "target_user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["target_user_id"], name: "index_follows_on_target_user_id"
+    t.index ["user_id"], name: "index_follows_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
